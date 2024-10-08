@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript Reflection Template</title>
+    <!-- Include PyScript CSS and JS -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1e22; /* Dark background */
+            color: #e1e1e1; /* Light text color */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #2a2d32; /* Darker container */
+            border: 2px solid #4CAF50; /* Green border */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #4CAF50; /* Green color for heading */
+            text-align: center; /* Center the heading */
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #3c3f44; /* Slightly lighter background */
+            border: 1px solid #4CAF50; /* Green border */
+            font-size: 16px;
+            color: #e1e1e1; /* Light text color */
+            white-space: pre-line; /* Ensures new lines are respected */
+        }
+        .name-grade {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #4CAF50; /* Green border */
+            border-radius: 5px;
+            background: #3c3f44; /* Slightly lighter background */
+            color: #e1e1e1; /* Light text color */
+            font-weight: bold;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto; /* Centers the image */
+            width: 150px; /* Set image width */
+            border-radius: 10px; /* Adds rounded corners to the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reflection</h1>
+        
+        <!-- Display Name and Grade Level -->
+        <div class="name-grade">
+            Name: Hubilla, Cris Jay U.<br>
+            <br>
+            Grade/Section: BSIT 1ST YEAR
+        </div>
+
+        <!-- Container for the reflection output -->
+        <div class="result" id="reflection_output"></div>
+    </div>
+
+    <!-- PyScript section to manage reflection logic -->
+    <py-script>
+        # Function to display the reflection text
+        def display_reflection():
+            # Prepare the reflection text divided into lines
+            reflection_lines = [
+                "Learning Python has been a transformative journey for me, filled with challenges and triumphs. As I reflect on my experience, I can clearly see how my skills have evolved and the significance of each step I’ve taken in this process. From my first lines of code to creating functional web applications, Python has been an invaluable tool for growth.",
+                "\nWhat I’ve Learned",
+                "Basic Python Skills: I began my Python journey with the foundational elements—variables, loops, and functions. These concepts serve as the building blocks of programming, allowing me to understand the underlying principles of how code operates. Grasping these fundamentals has not only made me comfortable with writing code but has also instilled a sense of confidence in my ability to learn and solve problems. Each new concept added a layer to my understanding, allowing me to build more complex programs as I progressed.",
+                
+                "\nProblem-Solving with Code: One of the most significant lessons I've learned is how to approach problems systematically. Python has taught me to break down tasks into manageable parts, which is essential when facing more complex challenges. For instance, when working on exercises that required data manipulation, I realized the importance of understanding each step of the process. This approach not only helps in coding but is a valuable life skill—applying logic and structure to overcome challenges is a practice I can use beyond programming.",
+                
+                "\nCreating Web Applications:Exploring Flask, a popular Python web framework, was an exhilarating part of my learning experience. Building web applications from scratch was both daunting and rewarding. It was fascinating to see how Python can be applied in real-world scenarios, transforming simple code into interactive applications that users can engage with. Each project taught me more about how the web works, from routing requests to managing user sessions. The sense of accomplishment I felt after successfully deploying an application cannot be overstated; it was a clear indicator of my growth as a programmer.",
+                
+                "\nChallenges and Growth: Despite the excitement, the journey was not without its hurdles. Initially, structuring a project in Python felt overwhelming. I often found myself grappling with how to organize my code effectively. The transition from writing small scripts to developing comprehensive applications required a shift in my mindset. It demanded not only technical knowledge but also creativity and critical thinking. Moreover, ensuring that my applications could handle different inputs and scenarios added another layer of complexity. However, each challenge I faced was a stepping stone, helping me develop resilience and adaptability.",
+                
+                "\nLooking Ahead:As I look to the future, I am eager to further enhance my skills. Now that I have a solid grasp of Python and am comfortable using VSCode, I want to delve into additional tools and technologies. Specifically, I am interested in exploring databases to understand data storage and retrieval better. Additionally, I wish to broaden my knowledge in data analysis, as I see its relevance in today’s data-driven world. Each new project will provide an opportunity to apply what I’ve learned while pushing the boundaries of my capabilities.",
+                
+                "\nConclusion: Overall, my journey of learning Python has been nothing short of wonderful. It’s been a profound experience that goes beyond merely writing code; it has reshaped how I organize my thoughts and approach problems. With each line of code, I have gained not just technical skills but also critical life skills that will serve me in many areas. As I continue to explore and create, I look forward to the many possibilities that lie ahead. The world of programming is vast, and I am excited to see where my newfound knowledge will take me next."
+            ]
+
+            # Join the lines to form a single reflection text
+            reflection_text = "\n".join(reflection_lines)
+
+            # Display the reflection output
+            Element("reflection_output").element.innerHTML = reflection_text
+
+        # Automatically call the function when the page loads
+        display_reflection()
+    </py-script>
+</body>
+</html>
